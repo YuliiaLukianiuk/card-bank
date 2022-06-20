@@ -1,0 +1,39 @@
+.outside-wrapper {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+    background-color: lightblue;
+}
+
+.wrapper-item {
+    margin: 0;
+}
+.wrapper-item-name {
+    margin: 0;
+    color: grey;
+    width: 160px;
+}
+.wrapper-item-name.price {
+    margin: 0;
+    color: blueviolet;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.visa {
+    width: 80px;
+    height: 45px;
+}
+.other {
+    margin: 0;
+    color: blueviolet;
+}
