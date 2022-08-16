@@ -1,0 +1,70 @@
+.outside-wrap-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    min-height: 400px;
+}
+
+.form-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    border-radius: 10px;
+    box-shadow: 10px 10px 8px lightgrey inset;
+}
+label{
+    font-size: 14px;
+}
+.form-item {
+    /*width: 50%;*/
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    border-bottom: 1px dashed lightgray;
+}
+
+#userName,
+.test{
+    /*margin-right: 5px;*/
+    border: none;
+    outline:none;
+    /*text-align: center;*/
+}
+
+.test::placeholder {
+    color: slategrey;
+    font-size: 10px;
+}
+
+.btn {
+    width: 100%;
+    padding: 11px;
+    margin-top: 165px;
+    background-color: mediumpurple;
+    border: none;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.wrapper-btn .btn[disabled] {
+    color: darkgrey;
+    filter: grayscale(50%);
+    cursor: default;
+}
+
+.user-name-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.user-name-input input{
+    border: none;
+    /*border-bottom: 1px dashed lightgray;*/
+}
+.error {
+    height: 8px;
+    font-size: 10px;
+    color: red;
+}
