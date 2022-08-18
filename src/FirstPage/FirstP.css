@@ -1,0 +1,15 @@
+.page-pay {
+    color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50%;
+}
+.btn-pay {
+    background-color: yellow;
+    border: none;
+    color: blueviolet;
+    padding: 20px 50px 20px 50px;
+
+}

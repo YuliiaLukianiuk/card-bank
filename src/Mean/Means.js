@@ -4,12 +4,14 @@ import * as Yup from 'yup';
 import MaskedInput from 'react-text-mask'
 import "./Mean.css"
 import {cardNumberMask, cvvMask, expireDateMask, telephone} from "../Mean/constants"
+import {Link} from "react-router-dom";
 // const inputAttrs = {
 // 	maskChar: '',
 // 	className: 'test',
 // 	alwaysShowMask: true,
 // };
 const validateSchema = Yup.object({
+	//transform преобразовівает введенніе значения в пустіе строки
 	cardNumber: Yup.string()
 		.required("This card is required")
 		.transform(value => value.replace(/[^\d]/g, ''))
@@ -28,9 +30,20 @@ const validateSchema = Yup.object({
 		.min(3, "Please enter 3 number "),
 	tel: Yup.string()
 		.required("This tel is required")
+		.transform(value => value.replace(/[^\d]/g, ''))
+		.min(12, "Please enter 12 number ")
+
+
 
 });
+//
+// function handleSubmits() {
+// 	console.log("7777")
+//
+// }
+
 export const Means = () => (
+
 	// const [cardNumber, setCardNumber] = useState(setInitialState(CARD_NUMBER_PLCH));
 	// const [date, setDate] = useState(setInitialState(EXPIRY_DATE_PLCH));
 	// const [code, setCode] = useState(setInitialState(CVV_CODE_PLCH));
@@ -70,23 +83,28 @@ export const Means = () => (
 
 	<div className={"outside-wrap-form"}>
 
+
 		<Formik initialValues={{cardNumber: "",
 														expiryDate:"",
 														userName:"",
 														cvvCode: "",
 														tel:""}}
 		        validationSchema={validateSchema}
+		        onSubmit={() => {
+			        console.log(7777)
+		        }}
 		>
 
 			{({
-				  values,
-				  errors,
-				  touched,
-				  handleChange,
-				  handleBlur,
-				  isValid,
-				  handleSubmit, dirty}) => {
-				// console.log('000')
+				values,
+				errors,
+				touched,
+				handleChange,
+				handleBlur,
+				isValid,
+				dirty,
+			  handleSubmit,}) => {
+
 				return (
 
 					<Form className={"form-wrap"} onSubmit={handleSubmit}>
@@ -202,10 +220,15 @@ export const Means = () => (
 
 						
 						<div className={"wrapper-btn"}>
-							<button type="submit"
-							        className={"btn"}>
-								Оплатить
-							</button>
+							<Link to={'/thanks'}>
+								<button type="submit"
+								        className={"btn"}
+								        disabled={!dirty || !isValid}
+								>
+									Оплатить
+								</button>
+
+							</Link>
 						</div>
 
 					</Form>
